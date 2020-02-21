@@ -18,7 +18,8 @@ variables:
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'Appjdjdghhdhdhd'
+  environmentName: 'Dev'
+  ProdenvironmentName: 'Prod'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
@@ -96,7 +97,7 @@ stages:
   - deployment: DeploymentJob
     pool:
       vmImage: $(vmImageName)
-    environment: $(environmentName)
+    environment: $(ProdenvironmentName)
     strategy:
       runOnce:
         deploy:
