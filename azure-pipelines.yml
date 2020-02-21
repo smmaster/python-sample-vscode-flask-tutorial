@@ -62,7 +62,7 @@ stages:
       displayName: 'Upload package'
       artifact: drop
 
-- stage: Deploy
+- stage: DeployDev
   displayName: 'Deploy Web App'
   dependsOn: Build
   condition: succeeded()
@@ -91,7 +91,7 @@ stages:
 
 - stage: Deploy2Prod
   displayName: 'Deploy Web App'
-  dependsOn: Build
+  dependsOn: DeployDev
   condition: succeeded()
   jobs:
   - deployment: DeploymentJob
